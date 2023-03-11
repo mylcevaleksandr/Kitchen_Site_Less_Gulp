@@ -7,7 +7,7 @@ const rename = require( "gulp-rename" );
 const jsMin = require( "gulp-jsmin" );
 const imageMin = require( "gulp-imagemin" );
 const browserSync = require( "browser-sync" ).create();
-const dest = "dist";
+const dest = "docs";
 
 gulp.task( "html", () => {
     return gulp.src( "src/*.html" )
@@ -22,21 +22,21 @@ gulp.task( "less", () => {
         .pipe( concatCss( "style.css" ) )
         .pipe( cssMin() )
         .pipe( rename( { suffix: ".min" } ) )
-        .pipe( gulp.dest( "dist/styles" ) );
+        .pipe( gulp.dest( "docs/styles" ) );
 } );
 
 gulp.task( "jsMin", function () {
     gulp.src( "src/JS/*.js" )
         .pipe( jsMin() )
         .pipe( rename( { suffix: ".min" } ) )
-        .pipe( gulp.dest( "dist/JS" ) );
+        .pipe( gulp.dest( "docs/JS" ) );
 } );
 
 //сжимает все картинки
 gulp.task( "imgSquash", () => {
     return gulp.src( "./src/images/*.png" )
         .pipe( imageMin() )
-        .pipe( gulp.dest( "dist/images" ) );
+        .pipe( gulp.dest( "docs/images" ) );
 } );
 
 
@@ -45,7 +45,7 @@ gulp.task( "imgSquash", () => {
 gulp.task( "browser-sync", function () {
     browserSync.init( {
         server: {
-            baseDir: "dist",
+            baseDir: "docs",
             port: 3000
         }
     } );
