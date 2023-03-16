@@ -6,6 +6,8 @@ const cssMin = require( "gulp-cssmin" );
 const rename = require( "gulp-rename" );
 const jsMin = require( "gulp-jsmin" );
 const imageMin = require( "gulp-imagemin" );
+const LessAutopreFix = require( "less-plugin-autoprefix" );
+const autopreFix = new LessAutopreFix( { browsers: [ "last 3 versions" ] } );
 const browserSync = require( "browser-sync" ).create();
 const dest = "docs";
 
@@ -18,7 +20,9 @@ gulp.task( "html", () => {
 // собирает все файлы less в один css, минифицирует его и добавляет .min к названию.
 gulp.task( "less", () => {
     return gulp.src( "./src/styles/*.less" )
-        .pipe( less() )
+        .pipe( less( {
+            plugins: [ autopreFix ]
+        } ) )
         .pipe( concatCss( "style.css" ) )
         .pipe( cssMin() )
         .pipe( rename( { suffix: ".min" } ) )

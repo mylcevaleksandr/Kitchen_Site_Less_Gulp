@@ -1,13 +1,376 @@
-body{
-  background-color: rgba(245, 162, 245, 0.93);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-h1 {
-  color: #a00a0a;
-  background-color: rgba(158, 241, 242, 0.75);
-  text-align: center;
+a {
+  text-decoration: none;
 }
 
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+
+body {
+  background-color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.btn {
+  border-radius: 35px;
+  border-style: none;
+  font-size: 20px;
+  font-family: "ProximaNovaBold", serif;
+  color: rgb(255, 255, 255);
+  line-height: 1;
+  padding: 25px 67px 25px 59px;
+  background-image: linear-gradient(0deg, rgb(247, 146, 0) 0%, rgb(255, 180, 0) 100%);
+}
+
+.svg-inline--fa {
+  height: 3em;
+}
+
+.top {
+  background-image: url("../images/mainKitchenBackground.png");
+  background-position: 20%;
+
+  background-size: cover;
+
+  .navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 26px 0;
+
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      max-width: 636px;
+      column-gap: 42px;
+      margin-right: 264px;
+
+      &_item {
+        &-link {
+          font-size: 18px;
+          font-family: "Gilroy";
+          color: rgb(255, 255, 255);
+          line-height: 1.107;
+
+          &:hover {
+            color: rgb(254, 175, 0)
+          }
+        }
+      }
+    }
+  }
+
+  .main {
+    padding-top: 104px;
+    padding-bottom: 132px;
+
+    &__header {
+      max-width: 748px;
+      font-size: 50px;
+      font-family: "GilroyExtraBold", sans-serif;
+      color: rgb(255, 255, 255);
+      line-height: 1.2;
+    }
+
+    &__article {
+      position: relative;
+      max-width: 580px;
+      align-items: center;
+      display: flex;
+      margin: 90px 0 92px;
+
+      &_image {
+        left: -50px;
+        position: absolute;
+      }
+
+      &_text {
+        margin-left: 85px;
+        font-size: 25px;
+        font-family: "GilroyRegular", sans-serif;
+        color: rgb(255, 246, 238);
+        line-height: 1.4;
+      }
+    }
+
+    &__btn {
+      margin-left: 10px;
+    }
+
+    &__tags {
+      position: relative;
+      left: -15px;
+      margin-top: 107px;
+      display: flex;
+      column-gap: 60px;
+
+
+      &_item {
+        font-size: 15.245px;
+        font-family: "GilroySemibold", sans-serif;
+        color: rgb(255, 255, 255);
+        line-height: 1.013;
+        padding: 36px 0 36px 40px;
+        list-style: none;
+        background-image: url("../images/ellipse.png");
+        background-repeat: no-repeat;
+        background-position: left center;
+        background-size: 40px;
+      }
+    }
+  }
+
+  &__line {
+    position: relative;
+    z-index: 2;
+    height: 30px;
+    width: 100%;
+    background-image: linear-gradient(280deg, rgb(255, 180, 0) 0%, rgb(247, 146, 0) 100%);
+  }
+}
+
+.guarantee {
+  padding-top: 120px;
+  padding-bottom: 157px;
+
+  &__heading {
+    margin-bottom: 110px;
+    display: flex;
+    align-items: center;
+
+    &_line {
+      .yellow-line-mixin();
+    }
+
+    &_yellow {
+      .yellow-mixin();
+    }
+
+    &_black {
+      .black-mixin();
+    }
+  }
+
+  &__articles {
+    padding-left: 40px;
+    padding-right: 90px;
+    display: flex;
+    justify-content: space-between;
+
+    &_left {
+      display: flex;
+      flex-direction: column;
+      min-width: 497px;
+
+      &-top {
+        max-width: 451px;
+        margin-bottom: 197px;
+
+        &-heading {
+          .guarantee-h3-mixin();
+        }
+
+        &-article {
+          .guarantee-p-mixin()
+        }
+      }
+
+      &-bottom {
+        align-self: flex-end;
+        max-width: 381px;
+
+        &-heading {
+          .guarantee-h3-mixin();
+        }
+
+        &-article {
+          .guarantee-p-mixin()
+        }
+      }
+    }
+
+    &_right {
+      display: flex;
+      flex-direction: column;
+      min-width: 443px;
+
+      &-top {
+        max-width: 384px;
+        margin-top: 113px;
+        margin-bottom: 217px;
+
+        &-heading {
+          .guarantee-h3-mixin();
+        }
+
+        &-article {
+          .guarantee-p-mixin()
+        }
+      }
+
+      &-bottom {
+        align-self: flex-end;
+        max-width: 332px;
+
+        &-heading {
+          .guarantee-h3-mixin();
+        }
+
+        &-article {
+          .guarantee-p-mixin()
+        }
+      }
+    }
+  }
+}
+
+.projects {
+  padding-bottom: 135px;
+
+  &__heading {
+    margin-bottom: 45px;
+    display: flex;
+    align-items: center;
+
+    &_line {
+      .yellow-line-mixin()
+    }
+
+    &_yellow {
+      .yellow-mixin()
+    }
+
+    &_black {
+      .black-mixin()
+    }
+  }
+
+  &__article {
+    max-width: 989px;
+    margin-left: 130px;
+    margin-bottom: 75px;
+    font-size: 19.697px;
+    font-family: "GilroyMedium", Serif;
+    color: rgb(56, 25, 0);
+    line-height: 1.75;
+  }
+
+  &__carousel {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 10px;
+
+    &_wrap {
+      max-width: 768px;
+
+      &-tags {
+        & li {
+          cursor: pointer;
+          border-width: 3px;
+          border-color: rgb(126, 123, 121);
+          border-style: solid;
+          border-radius: 50%;
+          width: 14px;
+          height: 14px;
+          background: transparent;
+
+          &:hover {
+            background-color: #ffffff;
+            border-color: rgb(249, 155, 0);
+            border-width: 4px;
+          }
+        }
+      }
+
+      &-control {
+        width: 50px;
+        color: #3f3f3f;
+        opacity: 1;
+      }
+    }
+
+    &_info {
+      padding-top: 90px;
+
+      &-heading {
+        font-size: 25px;
+        font-family: "GilroyBold";
+        color: rgb(56, 25, 0);
+        font-weight: bold;
+        line-height: 1.379;
+        margin-bottom: 42px;
+      }
+
+      &-description {
+        display: flex;
+        column-gap: 10px;
+        justify-content: space-between;
+
+        &-left {
+          display: flex;
+          flex-direction: column;
+          row-gap: 17px;
+          font-size: 17px;
+          line-height: 1.379;
+          font-family: "GilroyBold";
+          color: rgb(56, 25, 0);
+        }
+
+        &-right {
+          display: flex;
+          flex-direction: column;
+          row-gap: 17px;
+          font-size: 17.4px;
+          line-height: 1.379;
+          font-family: "GilroyMedium";
+          color: rgb(56, 25, 0);
+        }
+      }
+
+      &-stats {
+        margin-top: 75px;
+        display: flex;
+        justify-content: space-between;
+        column-gap: 30px;
+
+        &-block {
+          display: flex;
+          column-gap: 10px;
+          align-items: baseline;
+
+          &-img {
+            height: 26px;
+          }
+
+          &-span {
+            font-size: 18px;
+            font-family: "GilroyMedium";
+            color: rgb(31, 14, 7);
+          }
+        }
+      }
+    }
+  }
+}
 
 @import "variables";
 @import "adaptive";
+
