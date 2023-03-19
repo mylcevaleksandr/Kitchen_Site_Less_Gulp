@@ -4,32 +4,35 @@
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-}
-
 ul,
 ol,
 li {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-img {
-  vertical-align: top;
+a {
+  text-decoration: none;
 }
 
+p {
+  margin: 0
+}
 
 body {
   background-color: #ffffff;
+  position: relative;
 }
 
-.container {
+.myContainer {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0;
 }
 
 .btn {
+  max-width: 320px;
   border-radius: 35px;
   border-style: none;
   font-size: 20px;
@@ -46,15 +49,21 @@ body {
 
 .top {
   background-image: url("../images/mainKitchenBackground.png");
-  background-position: 20%;
-
+  background-position-x: 25%;
   background-size: cover;
 
   .navigation {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding: 26px 0;
+    padding-top: 26px;
+    padding-bottom: 26px;
+
+    &__burger {
+      color: rgb(247, 146, 0);
+      cursor: pointer;
+      display: none;
+    }
 
     &__list {
       display: flex;
@@ -69,6 +78,7 @@ body {
           font-family: "Gilroy";
           color: rgb(255, 255, 255);
           line-height: 1.107;
+          text-decoration: inherit;
 
           &:hover {
             color: rgb(254, 175, 0)
@@ -78,13 +88,15 @@ body {
     }
   }
 
+
   .main {
     padding-top: 104px;
-    padding-bottom: 132px;
+    padding-bottom: 95px;
 
     &__header {
       max-width: 748px;
       font-size: 50px;
+      margin-bottom: 0;
       font-family: "GilroyExtraBold", sans-serif;
       color: rgb(255, 255, 255);
       line-height: 1.2;
@@ -111,14 +123,12 @@ body {
       }
     }
 
-    &__btn {
-      margin-left: 10px;
-    }
 
     &__tags {
       position: relative;
       left: -15px;
-      margin-top: 107px;
+      margin-top: 75px;
+      margin-bottom: 0;
       display: flex;
       column-gap: 60px;
 
@@ -148,11 +158,11 @@ body {
 }
 
 .guarantee {
-  padding-top: 120px;
-  padding-bottom: 157px;
+  padding-top: 100px;
+  padding-bottom: 120px;
 
   &__heading {
-    margin-bottom: 110px;
+    margin-bottom: 80px;
     display: flex;
     align-items: center;
 
@@ -276,6 +286,7 @@ body {
   &__carousel {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     column-gap: 10px;
 
     &_wrap {
@@ -309,6 +320,14 @@ body {
 
     &_info {
       padding-top: 90px;
+
+      &-slide {
+        display: none;
+
+        &.active {
+          display: block;
+        }
+      }
 
       &-heading {
         font-size: 25px;

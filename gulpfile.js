@@ -29,8 +29,8 @@ gulp.task( "less", () => {
         .pipe( gulp.dest( "docs/styles" ) );
 } );
 
-gulp.task( "jsMin", function () {
-    gulp.src( "src/JS/*.js" )
+gulp.task( "jsMin", () => {
+    return gulp.src( "src/JS/*.js" )
         .pipe( jsMin() )
         .pipe( rename( { suffix: ".min" } ) )
         .pipe( gulp.dest( "docs/JS" ) );
