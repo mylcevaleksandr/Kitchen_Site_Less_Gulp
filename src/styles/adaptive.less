@@ -137,8 +137,39 @@
       }
     }
   }
+
+  .feedback {
+    &__heading {
+      text-align: center;
+
+      &_black {
+        margin-left: 0;
+      }
+
+      &_yallow {
+        margin: 0;
+      }
+    }
+
+    &__article {
+      text-align: center;
+      margin-left: 0;
+    }
+  }
 }
 
+@media screen and (max-width: 876px) {
+  .feedback {
+    &__heading {
+      flex-direction: column;
+      row-gap: 20px;
+
+      &_line {
+        margin: 0;
+      }
+    }
+  }
+}
 
 @media screen and (max-width: 823px) {
   .top {
@@ -265,13 +296,14 @@
     flex-direction: column;
     justify-content: center;
     row-gap: 20px;
+    text-align: center;
 
     &_yellow {
-      text-align: center;
+      margin: 0;
     }
 
     &_black {
-      text-align: center;
+      margin: 0;
     }
   }
 
@@ -293,6 +325,19 @@
         &-description {
           justify-content: space-between;
           column-gap: 20px;
+        }
+      }
+    }
+  }
+
+  .feedback {
+    &__videos {
+      grid-template-columns: 300px;
+
+      &_card {
+        &-video {
+          width: 300px;
+          height: 173px;
         }
       }
     }
@@ -440,6 +485,8 @@
   }
 
   .max {
+    margin-bottom: 230px;
+
     &__years {
       top: 251px;
       left: -19px;
@@ -457,6 +504,12 @@
 }
 
 @media screen and (max-width: 332px) {
+
+  .main__btn{
+    padding-left: 55px;
+    padding-right: 55px;
+
+  }
   .projects__carousel_info-description {
     column-gap: 5px;
   }

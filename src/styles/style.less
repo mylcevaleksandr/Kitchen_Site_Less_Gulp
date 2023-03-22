@@ -617,6 +617,75 @@ body {
   }
 }
 
+.feedback {
+  margin-bottom: 156px;
+
+  &__heading {
+
+    margin-bottom: 46px;
+    display: flex;
+    align-items: center;
+
+    &_line {
+      .yellow-line-mixin()
+    }
+
+    &_yellow {
+      .yellow-mixin()
+    }
+
+    &_black {
+      .black-mixin();
+      margin-left: 22px;
+    }
+  }
+
+  &__article {
+    font-size: 19.697px;
+    font-family: "GilroyMedium", Serif;
+    color: rgb(31, 14, 7);
+    line-height: 1.75;
+    margin-left: 132px;
+    margin-bottom: 80px;
+  }
+
+  &__videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 530px);
+    justify-content: center;
+    column-gap: 70px;
+    row-gap: 50px;
+    flex-wrap: wrap;
+
+    &_card {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &-video {
+        width: 530px;
+        height: 301px;
+
+        & iframe {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &-article {
+        align-self: flex-start;
+        font-size: 17.727px;
+        font-family: "GilroyBold", Serif;
+        color: rgb(56, 25, 0);
+        line-height: 1.944;
+        margin-top: 18px;
+      }
+    }
+  }
+
+}
+
 
 @import "variables";
 @import "adaptive";
