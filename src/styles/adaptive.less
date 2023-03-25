@@ -6,6 +6,12 @@
 }
 
 @media screen and(max-width: 1178px) {
+  .top {
+    &__fixed {
+      right: 10px;
+    }
+  }
+
   .projects__carousel_info-stats {
     margin-top: 20px;
     justify-content: center;
@@ -57,9 +63,41 @@
     }
   }
 
+  .order {
+    &__block {
+      &_form {
+        & input {
+          background-color: transparent;
+        }
+
+        &-btn {
+          &.btn {
+            opacity: 85%;
+          }
+        }
+      }
+    }
+
+    &__person {
+      transform: scale(.65);
+      right: 0;
+      top: 109px;
+      left: revert;
+    }
+  }
+
 }
 
 @media screen and (max-width: 989px) {
+  .top {
+    &__popup {
+      transform: scale(75%);
+
+      &_main {
+        column-gap: 97px;
+      }
+    }
+  }
 
   .guarantee__articles {
     padding-left: 0;
@@ -146,7 +184,7 @@
         margin-left: 0;
       }
 
-      &_yallow {
+      &_yellow {
         margin: 0;
       }
     }
@@ -156,10 +194,38 @@
       margin-left: 0;
     }
   }
+
+  .order {
+    &__person {
+      right: -265px;
+    }
+  }
+}
+
+@media screen and (max-width: 921px) {
+  .footer {
+    &__top {
+      justify-content: space-around;
+      text-align: center;
+      row-gap: 40px;
+
+      &_links {
+        align-items: center;
+        row-gap: 40px;
+      }
+
+      &_office, &_work, &_contacts {
+        row-gap: 40px;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 876px) {
-  .feedback {
+  .feedback, .order {
+    margin-bottom: 50px;
+    text-align: center;
+
     &__heading {
       flex-direction: column;
       row-gap: 20px;
@@ -167,12 +233,28 @@
       &_line {
         margin: 0;
       }
+
+      &_black {
+        margin: 0;
+      }
+    }
+
+    &__article {
+      margin-left: 0;
+    }
+
+    &__person {
+      top: 138px;
     }
   }
 }
 
 @media screen and (max-width: 823px) {
   .top {
+    &__fixed {
+      top: 604px;
+    }
+
     .navigation {
       flex-direction: column;
       align-items: center;
@@ -244,10 +326,14 @@
 
   .advantages {
     &__heading {
-      font-size: 30px;
       flex-direction: column;
       row-gap: 10px;
       margin-bottom: 50px;
+      text-align: center;
+
+      &_line {
+        margin: 0;
+      }
 
     }
 
@@ -262,7 +348,22 @@
   }
 }
 
+@media screen and (max-width: 697px) {
+  .order {
+    &__person {
+      top: 320px;
+    }
+  }
+}
+
 @media screen and (max-width: 685px) {
+  .top {
+    &__popup {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
   .max {
     padding: 26px 10px;
     justify-content: center;
@@ -280,8 +381,20 @@
   }
 }
 
+@media screen and (max-width: 651px) {
+  .order {
+    &__person {
+      top: 372px;
+    }
+  }
+}
+
 @media screen and (max-width: 630px) {
   .top {
+    &__fixed {
+      top: 708px;
+    }
+
     .navigation {
       &__list {
         flex-wrap: wrap;
@@ -342,11 +455,43 @@
       }
     }
   }
+}
 
+@media screen and (max-width: 516px) {
+  .top {
+    &__popup {
+      &_main {
+        flex-direction: column;
+        align-self: center;
+
+        &-image {
+          transform: rotate(60deg);
+        }
+      }
+    }
+  }
+
+  .order {
+    &__person {
+      top: 388px;
+    }
+  }
+}
+
+@media screen and (max-width: 491px) {
+  .order {
+    &__person {
+      top: 423px;
+    }
+  }
 }
 
 @media screen and (max-width: 480px) {
   .top {
+    &__fixed {
+      top: 400px;
+    }
+
     .main {
       display: flex;
       flex-direction: column;
@@ -392,12 +537,24 @@
 
 }
 
+@media screen and (max-width: 442px) {
+  .order {
+    &__person {
+      top: 455px;
+    }
+  }
+}
+
 @media screen and(max-width: 425px) {
   .svg-inline--fa {
     height: 2em;
   }
 
   .top {
+    &__fixed {
+      top: 300px;
+    }
+
     .navigation {
       flex-direction: row;
       justify-content: space-between;
@@ -503,13 +660,42 @@
   }
 }
 
+@media screen and (max-width: 375px) {
+  .order {
+
+    &__block {
+      &_form {
+        grid-template-columns: 300px;
+
+        & input {
+          width: 300px;
+        }
+
+        &-btn {
+          padding-left: 50px;
+          padding-right: 50px;
+
+          &.btn {
+            max-width: 300px;
+          }
+        }
+      }
+    }
+
+    &__person {
+      top: 491px;
+    }
+  }
+}
+
 @media screen and (max-width: 332px) {
 
-  .main__btn{
+  .main__btn {
     padding-left: 55px;
     padding-right: 55px;
 
   }
+
   .projects__carousel_info-description {
     column-gap: 5px;
   }

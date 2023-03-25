@@ -7,6 +7,20 @@ const menuClose = document.getElementsByClassName( "navigation__list_item-close"
 const menuCloseLink = document.getElementsByClassName( "navigation__list_item-link" );
 const indicators = document.querySelectorAll( "[data-target='#carouselIndicators']" );
 const infoSlides = document.querySelectorAll( ".projects__carousel_info-slide" );
+const mainBtn = document.getElementsByClassName( "main__btn" )[0];
+const popupName = document.getElementById( "namePopup" );
+const popupPhone = document.getElementById( "phonePopup" );
+const popupBtn = document.getElementById( "btnPopup" );
+const formName = document.getElementById( "name" );
+const formPhone = document.getElementById( "phone" );
+const formDate = document.getElementById( "date" );
+const formBtn = document.getElementById( "btnForm" );
+let topPopupWrapper = document.getElementsByClassName( "top__popup_wrapper" )[0];
+
+
+mainBtn.addEventListener( "click", () => {
+    topPopupWrapper.style.display = "flex";
+} );
 
 burger.addEventListener( "click", function () {
     menu.classList.add( "navigation__toggle" );

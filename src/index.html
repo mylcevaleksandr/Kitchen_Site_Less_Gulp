@@ -14,7 +14,37 @@
     <script defer src="JS/script.min.js"></script>
 </head>
 <body>
+
 <section class="top">
+    <div class="top__fixed">
+        <img src="images/facebook.png" alt="facebook">
+        <img src="images/instagram.png" alt="instagram">
+        <img src="images/vk.png" alt="vk">
+    </div>
+    <div class="top__popup_wrapper">
+        <div class="top__popup">
+            <h3 class="top__popup_header">Заказать звонок</h3>
+            <p class="top__popup_description">Оставьте заявку и наш менеджер свяжется с Вами в течение 10 минут.</p>
+            <div class="top__popup_main">
+                <div class="top__popup_main-image">
+                    <img src="images/phoneInPopup.png" alt="telephone">
+                </div>
+                <form action="submit" class="top__popup_main_form">
+                    <input type="name" id="namePopup" class="top__popup_main_form-name form-border"
+                           placeholder="Ваше имя">
+                    <p class="top__popup_main_form-name-alert">Пожалуйста заполните поле имя</p>
+                    <input type="tel" name="phone" id="phonePopup" class="top__popup_main_form-phone"
+                           placeholder="+7 (___) ___ - __ - __">
+                    <p class="top__popup_main_form-phone-alert">Пожалуйста заполните поле телефон</p>
+                    <button type="button" id="btnPopup" class="top__popup_main_form-btn btn">Заказать звонок</button>
+                    <div class="top__popup_main_form-terms">
+                        <span>Нажимая на кнопку, Вы соглашаетесь с</span>
+                        <a href="#" class="top__popup_main_form-terms-agree"> Персональной обработкой данных</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <nav class="myContainer navigation">
         <div class="navigation__logo"><img src="images/logo.png" alt="logo"></div>
         <div class="navigation__burger"><i class="fa-solid fa-bars "></i></div>
@@ -473,9 +503,84 @@
     </div>
 </section>
 
-<section class="order"></section>
+<div class="order-wrapper">
+    <section class="myContainer order">
+        <h2 class="order__heading">
+            <span class="order__heading_line"></span>
+            <span class="order__heading_yellow">Узнайте, что</span>
+            <span class="order__heading_black">наши клиенты говорят о нас</span>
+        </h2>
+        <h4 class="order__article">Мы приедем к вам домой, привезем образцы материалов, снимем замеры
+            и вместе с Вами разработаем дизайн-проект вашей кухни.</h4>
+        <div class="order__block">
+            <h4 class="order__block_header"><span>Заполните форму,</span>
+                <span>  и мы свяжемся с Вами в ближайшее время</span></h4>
+            <form class="order__block_form">
+                <div>
 
-<section class="footer"></section>
+                    <input type="name" id="name" class="order__block_form-name" placeholder="Ваше имя">
+                    <p class="order__block_form-name-alert">Пожалуйста заполните поле имя</p>
+                </div>
+                <div>
+                    <input type="tel" name="phone" id="phone" class="order__block_form-phone"
+                           placeholder="+7 (___) ___ - __ - __">
+                    <p class="order__block_form-phone-alert">Пожалуйста заполните поле телефон</p>
+                </div>
+                <div>
+                    <input type="text" name="date" id="date" class="order__block_form-date"
+                           placeholder="Желаемая дата и время">
+                    <p class="order__block_form-date-alert">Пожалуйста выберите дату</p>
+                </div>
+                <button type="button" id="btnForm" class="order__block_form-btn btn">Вызвать замерщика</button>
+            </form>
+        </div>
+        <div class="order__person">
+            <img src="images/person.png" alt="person">
+        </div>
+    </section>
+
+    <div class="order-wrapper__line"></div>
+</div>
+
+<div class="footer-wrapper">
+    <section class="myContainer footer">
+        <div class="footer__top">
+            <div class="footer__top_links">
+                <div class="footer__top_links-logo">
+                    <img src="images/logo.png" alt="logo">
+                </div>
+                <div class="footer__top_links-icons">
+                    <img src="images/facebook.png" alt="facebook">
+                    <img src="images/instagram.png" alt="instagram">
+                    <img src="images/vk.png" alt="vk">
+
+                </div>
+            </div>
+            <div class="footer__top_office">
+                <span class="footer__top_office-description">Наш офис находится по адресу:</span>
+                <span class="footer__top_office-address">г. Москва, ул. Фруктовая, 11 (строение 1)</span>
+            </div>
+            <div class="footer__top_work">
+                <span class="footer__top_work-description">Мы работаем:</span>
+                <span class="footer__top_work-time">Ежедневно, с 9:00 до 20:00</span>
+            </div>
+            <div class="footer__top_contacts">
+                <div class="footer__top_contacts-phone">
+                    <img src="images/call-answer.png" alt="telephone">
+                    <span>+7 (925) 877 77 65</span>
+                </div>
+                <div class="footer__top_contacts-mail">
+                    <img src="images/mail.png" alt="mail">
+                    <span>shef@gmail.com</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <span class="footer__bottom_rights">Все права защищены, 2019</span>
+        </div>
+
+    </section>
+</div>
 
 </body>
 </html>
