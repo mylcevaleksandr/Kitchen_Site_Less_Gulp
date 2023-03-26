@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.animate {
+  animation-duration: 2s;
+}
+
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
 }
@@ -58,6 +62,11 @@ body {
   height: 3em;
 }
 
+.error_message, .error_message-popup {
+  display: none;
+  color: red;
+  padding-left: 10px;
+}
 
 .top {
   position: relative;
@@ -149,12 +158,6 @@ body {
         flex-direction: column;
         row-gap: 20px;
 
-        & p {
-          color: red;
-          text-align: left;
-          padding-left: 10px;
-        }
-
         & input {
           .order-form-mixin();
         }
@@ -182,6 +185,18 @@ body {
             }
           }
         }
+      }
+
+      &_success {
+        display: none;
+        max-width: 324px;
+        height: 305px;
+        font-size: 24.596px;
+        font-family: "GilroyBold", sans-serif;
+        color: rgb(56, 25, 0);
+        line-height: 1.4;
+        text-align: center;
+        align-items: center;
       }
     }
   }
@@ -853,7 +868,7 @@ body {
     &_header {
       display: flex;
       flex-direction: column;
-      //align-items: center;
+
       & span {
         font-size: 24.596px;
         font-family: "GilroyBold", sans-serif;
@@ -872,13 +887,6 @@ body {
       row-gap: 20px;
       column-gap: 30px;
 
-      & p{
-        color: red;
-        margin-top: 10px;
-        padding-left: 10px;
-
-      }
-
       & input {
         .order-form-mixin();
       }
@@ -887,6 +895,25 @@ body {
         padding-left: 65px;
         padding-right: 65px;
       }
+    }
+  }
+
+  &__success {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+    display: none;
+    max-width: 720px;
+    height: 259px;
+    justify-content: center;
+    align-items: center;
+
+    & p {
+      font-size: 24.596px;
+      font-family: "GilroyBold", sans-serif;
+      color: rgb(56, 25, 0);
+      line-height: 1.4;
+      text-align: center;
     }
   }
 
@@ -1017,10 +1044,51 @@ body {
 
 }
 
-.form-border {
-  border-color: red;
+.loader {
+  z-index: 999;
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: @loader;
+  justify-content: center;
+  align-items: center;
+
+  .lds-hourglass {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+
+    &:after {
+      content: " ";
+      display: block;
+      border-radius: 50%;
+      width: 0;
+      height: 0;
+      box-sizing: border-box;
+      border: 38px solid @load-color;
+      border-color: @load-color transparent @load-color transparent;
+      animation: lds-hourglass 1.2s infinite;
+    }
+  }
 }
 
+@keyframes lds-hourglass {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    transform: rotate(900deg);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    transform: rotate(1800deg);
+  }
+}
 
 @import "variables";
 @import "adaptive";

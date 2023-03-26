@@ -6,23 +6,25 @@
     <meta name="author" content="Aleksandr Myltsev">
     <title>Title</title>
     <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/animate.min.css">
     <link rel="stylesheet" href="styles/style.min.css">
 
     <script defer src="JS/jquery.min.js"></script>
     <script defer src="JS/bootstrap.min.js"></script>
+    <script defer src="JS/wow.min.js"></script>
     <script defer src="https://kit.fontawesome.com/3bc468336c.js" crossorigin="anonymous"></script>
     <script defer src="JS/script.min.js"></script>
 </head>
 <body>
 
-<section class="top">
+<section class="top wow animate__fadeInLeftBig " data-wow-duration="2s">
     <div class="top__fixed">
         <img src="images/facebook.png" alt="facebook">
         <img src="images/instagram.png" alt="instagram">
         <img src="images/vk.png" alt="vk">
     </div>
-    <div class="top__popup_wrapper">
-        <div class="top__popup">
+    <div class="top__popup_wrapper ">
+        <div class="top__popup ">
             <h3 class="top__popup_header">Заказать звонок</h3>
             <p class="top__popup_description">Оставьте заявку и наш менеджер свяжется с Вами в течение 10 минут.</p>
             <div class="top__popup_main">
@@ -32,16 +34,19 @@
                 <form action="submit" class="top__popup_main_form">
                     <input type="name" id="namePopup" class="top__popup_main_form-name form-border"
                            placeholder="Ваше имя">
-                    <p class="top__popup_main_form-name-alert">Пожалуйста заполните поле имя</p>
+                    <p class="error_message-popup">Пожалуйста заполните поле имя</p>
                     <input type="tel" name="phone" id="phonePopup" class="top__popup_main_form-phone"
                            placeholder="+7 (___) ___ - __ - __">
-                    <p class="top__popup_main_form-phone-alert">Пожалуйста заполните поле телефон</p>
+                    <p class="error_message-popup">Пожалуйста заполните поле телефон</p>
                     <button type="button" id="btnPopup" class="top__popup_main_form-btn btn">Заказать звонок</button>
                     <div class="top__popup_main_form-terms">
                         <span>Нажимая на кнопку, Вы соглашаетесь с</span>
                         <a href="#" class="top__popup_main_form-terms-agree"> Персональной обработкой данных</a>
                     </div>
                 </form>
+                <div class="top__popup_main_success">
+                    <p>Спасибо! Мы перезвоним вам через несколько минут.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -104,7 +109,7 @@
     <div class="top__line"></div>
 </section>
 
-<section class="myContainer guarantee">
+<section class="myContainer guarantee wow animate__zoomIn" data-wow-duration="2s">
     <h2 class="guarantee__heading">
         <span class="guarantee__heading_line"></span>
         <span class="guarantee__heading_yellow">Мы гарантируем</span>
@@ -143,7 +148,7 @@
     </div>
 </section>
 
-<section class="myContainer projects">
+<section class="myContainer projects wow animate__lightSpeedInRight " data-wow-duration="2s">
     <h2 class="projects__heading">
         <span class="projects__heading_line"></span>
         <span class="projects__heading_yellow">Такие кухни мы реализовали</span>
@@ -376,7 +381,7 @@
     </div>
 </section>
 
-<section class="myContainer stats">
+<section class="myContainer stats wow animate__zoomIn " data-wow-duration="2s">
     <div class="stats__cards one">
         <img src="images/11.png" alt="number" class="stats__cards_img">
         <p class="stats__cards_text">Столько <span>лет</span> наша компания
@@ -394,7 +399,7 @@
     </div>
 </section>
 
-<section class="myContainer advantages">
+<section class="myContainer advantages wow animate__lightSpeedInLeft " data-wow-duration="2s">
     <h2 class="advantages__heading">
         <span class="advantages__heading_line"></span>
         <span class="advantages__heading_yellow">Новая кухня с нами —</span>
@@ -432,7 +437,7 @@
     </div>
 </section>
 
-<section class="myContainer">
+<section class="myContainer wow animate__zoomIn " data-wow-duration="2s">
     <div class="max">
         <div class="max__years">
             <div class="max__years_frame">
@@ -456,7 +461,7 @@
     </div>
 </section>
 
-<section class="myContainer feedback">
+<section class="myContainer feedback wow animate__fadeInLeftBig " data-wow-duration="2s">
     <h2 class="feedback__heading">
         <span class="feedback__heading_line"></span>
         <span class="feedback__heading_black">Узнайте, что</span>
@@ -503,7 +508,7 @@
     </div>
 </section>
 
-<div class="order-wrapper">
+<div class="order-wrapper wow animate__backInLeft " data-wow-duration="2s">
     <section class="myContainer order">
         <h2 class="order__heading">
             <span class="order__heading_line"></span>
@@ -512,27 +517,30 @@
         </h2>
         <h4 class="order__article">Мы приедем к вам домой, привезем образцы материалов, снимем замеры
             и вместе с Вами разработаем дизайн-проект вашей кухни.</h4>
-        <div class="order__block">
+        <div class="order__block" id="order-form">
             <h4 class="order__block_header"><span>Заполните форму,</span>
                 <span>  и мы свяжемся с Вами в ближайшее время</span></h4>
             <form class="order__block_form">
                 <div>
 
                     <input type="name" id="name" class="order__block_form-name" placeholder="Ваше имя">
-                    <p class="order__block_form-name-alert">Пожалуйста заполните поле имя</p>
+                    <p class="error_message">Пожалуйста заполните поле имя</p>
                 </div>
                 <div>
                     <input type="tel" name="phone" id="phone" class="order__block_form-phone"
                            placeholder="+7 (___) ___ - __ - __">
-                    <p class="order__block_form-phone-alert">Пожалуйста заполните поле телефон</p>
+                    <p class="error_message">Пожалуйста заполните поле телефон</p>
                 </div>
                 <div>
                     <input type="text" name="date" id="date" class="order__block_form-date"
                            placeholder="Желаемая дата и время">
-                    <p class="order__block_form-date-alert">Пожалуйста выберите дату</p>
+                    <p class="error_message">Пожалуйста выберите дату</p>
                 </div>
                 <button type="button" id="btnForm" class="order__block_form-btn btn">Вызвать замерщика</button>
             </form>
+        </div>
+        <div class="order__success">
+            <p>Спасибо! Мы перезвоним вам через несколько минут.</p>
         </div>
         <div class="order__person">
             <img src="images/person.png" alt="person">
@@ -542,7 +550,7 @@
     <div class="order-wrapper__line"></div>
 </div>
 
-<div class="footer-wrapper">
+<div class="footer-wrapper wow animate__backInRight " data-wow-duration="2s">
     <section class="myContainer footer">
         <div class="footer__top">
             <div class="footer__top_links">
@@ -581,6 +589,8 @@
 
     </section>
 </div>
-
+<div class="loader">
+    <div class="lds-hourglass"></div>
+</div>
 </body>
 </html>
