@@ -38,20 +38,20 @@ const formBtn = document.getElementById( "btnForm" );
 const loader = document.getElementsByClassName( "loader" )[0];
 
 /* scroll into view native */
-const anchorLinks = document.querySelectorAll( "a[href^=\"#\"]" );
-
-for ( let item of anchorLinks ) {
-    item.addEventListener( "click", () => {
-        let hashValue = item.getAttribute( "href" );
-        let target = document.querySelector( hashValue );
-        target.scrollIntoView( {
-            behavior: "smooth",
-            block: "start"
-        } );
-        history.pushState( null, null, hashValue );
-        location.reload();
-    } );
-}
+// const anchorLinks = document.querySelectorAll( "a[href^=\"#\"]" );
+//
+// for ( let item of anchorLinks ) {
+//     item.addEventListener( "click", () => {
+//         let hashValue = item.getAttribute( "href" );
+//         let target = document.querySelector( hashValue );
+//         target.scrollIntoView( {
+//             behavior: "smooth",
+//             block: "start"
+//         } );
+//         history.pushState( null, null, hashValue );
+//         location.reload();
+//     } );
+// }
 
 /* логика бургера */
 burger.addEventListener( "click", function () {
@@ -174,7 +174,7 @@ const getIndex = () => {
 const changeInfo = ( index ) => {
     infoSlides.forEach( ( el, i ) => {
         el.classList.remove( "active" );
-        if ( i === index ) {
+        if ( i == index ) {
             el.classList.add( "active" );
         }
     } );
@@ -183,7 +183,7 @@ const changeInfo = ( index ) => {
 /* создаем новый клон обзервера */
 const observer = new MutationObserver( ( mutationsList ) => {
     for ( const mutation of mutationsList ) {
-        if ( mutation.type === "attributes" && mutation.attributeName === "class" ) {
+        if ( mutation.type == "attributes" && mutation.attributeName === "class" ) {
             changeInfo( getIndex() );
         }
     }
