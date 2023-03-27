@@ -38,20 +38,20 @@ const formBtn = document.getElementById( "btnForm" );
 const loader = document.getElementsByClassName( "loader" )[0];
 
 /* scroll into view native */
-// const anchorLinks = document.querySelectorAll( "a[href^=\"#\"]" );
-//
-// for ( let item of anchorLinks ) {
-//     item.addEventListener( "click", () => {
-//         let hashValue = item.getAttribute( "href" );
-//         let target = document.querySelector( hashValue );
-//         target.scrollIntoView( {
-//             behavior: "smooth",
-//             block: "start"
-//         } );
-//         history.pushState( null, null, hashValue );
-//         location.reload();
-//     } );
-// }
+const anchorLinks = document.getElementsByClassName( "navigation__list_item-link" );
+
+for ( let item of anchorLinks ) {
+    item.addEventListener( "click", ( e ) => {
+        let hashValue = item.getAttribute( "href" );
+        let target = document.querySelector( hashValue );
+        target.scrollIntoView( {
+            behavior: "smooth",
+            block: "start"
+        } );
+        history.pushState( null, null, hashValue );
+        e.preventDefault();
+    } );
+}
 
 /* логика бургера */
 burger.addEventListener( "click", function () {
