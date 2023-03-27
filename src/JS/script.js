@@ -41,7 +41,7 @@ const loader = document.getElementsByClassName( "loader" )[0];
 const anchorLinks = document.querySelectorAll( "a[href^=\"#\"]" );
 
 for ( let item of anchorLinks ) {
-    item.addEventListener( "click", ( e ) => {
+    item.addEventListener( "click", () => {
         let hashValue = item.getAttribute( "href" );
         let target = document.querySelector( hashValue );
         target.scrollIntoView( {
@@ -142,7 +142,7 @@ formBtn.addEventListener( "click", () => {
             data: { name: formName.value }
         } )
             .done( ( msg ) => {
-                if ( msg.success == 1 ) {
+                if ( msg.success === 1 ) {
                     alert( "Возникла ошибка при оформлении заказа" );
                     loader.style.display = "none";
                     location.reload();
@@ -174,7 +174,7 @@ const getIndex = () => {
 const changeInfo = ( index ) => {
     infoSlides.forEach( ( el, i ) => {
         el.classList.remove( "active" );
-        if ( i == index ) {
+        if ( i === index ) {
             el.classList.add( "active" );
         }
     } );
