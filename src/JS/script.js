@@ -1,7 +1,7 @@
 // noinspection DuplicatedCode
 
 "use strict";
-new WOW({
+new WOW( {
     animateClass: "animate__animated"
 } ).init();
 
@@ -36,6 +36,22 @@ const formBtn = document.getElementById( "btnForm" );
 
 /* loader */
 const loader = document.getElementsByClassName( "loader" )[0];
+
+/* scroll into view native */
+const anchorLinks = document.querySelectorAll( "a[href^=\"#\"]" );
+
+for ( let item of anchorLinks ) {
+    item.addEventListener( "click", ( e ) => {
+        let hashValue = item.getAttribute( "href" );
+        let target = document.querySelector( hashValue );
+        target.scrollIntoView( {
+            behavior: "smooth",
+            block: "start"
+        } );
+        history.pushState( null, null, hashValue );
+        location.reload();
+    } );
+}
 
 /* логика бургера */
 burger.addEventListener( "click", function () {
