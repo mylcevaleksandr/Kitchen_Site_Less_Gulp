@@ -30,10 +30,6 @@
     }
   }
 
-  .projects__carousel_info {
-    padding-top: 10px;
-  }
-
   .advantages {
     &__heading {
       justify-content: center;
@@ -352,7 +348,8 @@
   .order {
     &__success {
       height: 439px;
-      & p{
+
+      & p {
         align-self: flex-start;
       }
     }
@@ -438,6 +435,8 @@
       row-gap: 20px;
 
       &_info {
+        padding-top: 10px;
+
         &-heading {
           text-align: center;
         }
@@ -648,9 +647,11 @@
     }
   }
 
-  .projects__carousel_info-heading {
+  .projects__carousel_info{
+    width: unset;
+  &-heading {
     margin-bottom: 30px;
-  }
+  }}
 
   .max {
     margin-bottom: 230px;

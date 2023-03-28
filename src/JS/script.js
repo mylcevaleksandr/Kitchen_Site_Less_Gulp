@@ -37,6 +37,11 @@ const formBtn = document.getElementById( "btnForm" );
 /* loader */
 const loader = document.getElementsByClassName( "loader" )[0];
 
+/* set current year in footer rights via JS */
+const setYear = new Date().getFullYear();
+const yearSpan = document.querySelector( ".footer-year" );
+yearSpan.textContent = setYear.toString();
+
 /* scroll into view native */
 const anchorLinks = document.getElementsByClassName( "navigation__list_item-link" );
 
