@@ -1,4 +1,3 @@
-
 "use strict";
 new WOW({
     animateClass: "animate__animated"
@@ -92,29 +91,31 @@ popupBtn.addEventListener("click", () => {
         popupPhone.nextElementSibling.style.display = "flex";
     } else {
         loader.style.display = "flex";
-        $.ajax({
-            method: "POST",
-            url: "https://testologia.site/checkout",
-            data: {name: popupName.value}
-        })
-            .done(function (msg) {
-                if (msg.success === 1) {
-                    alert("Возникла ошибка при оформлении заказа");
-                    loader.style.display = "none";
-                    location.reload();
-                } else {
-                    popupForm.style.display = "none";
-                    popupSuccess.style.display = "flex";
-                    loader.style.display = "none";
-                    setTimeout(function () {
-                        location.reload();
-                    }, 5000);
-                }
-            })
-            .fail((jqXHR, textStatus) => {
-                alert("AJAX request failed: " + textStatus);
+        const request = $.ajax({
+            url: "https://api.wheretheiss.at/v1/satellites",
+            method: "GET"
+        });
+        request.done(function (msg) {
+            if (msg.success === 1) {
+                alert("Возникла ошибка при оформлении заказа");
                 loader.style.display = "none";
-            });
+                location.reload();
+            } else {
+                console.log(msg);
+                popupForm.style.display = "none";
+                popupSuccess.style.display = "flex";
+                loader.style.display = "none";
+                setTimeout(function () {
+                    location.reload();
+                }, 5000);
+            }
+        });
+        request.fail((jqXHR, textStatus) => {
+            console.log(jqXHR, textStatus);
+            alert("AJAX request failed: " + textStatus);
+            loader.style.display = "none";
+            location.reload();
+        });
     }
 });
 
@@ -141,8 +142,8 @@ formBtn.addEventListener("click", () => {
     } else {
         loader.style.display = "flex";
         $.ajax({
-            method: "POST",
-            url: "https://testologia.site/checkout",
+            method: "GET",
+            url: "https://api.wheretheiss.at/v1/satellites/25544",
             data: {name: formName.value}
         })
             .done((msg) => {
@@ -152,6 +153,7 @@ formBtn.addEventListener("click", () => {
                     location.reload();
 
                 } else {
+                    console.log(msg);
                     form.style.display = "none";
                     formSuccess.style.display = "flex";
                     loader.style.display = "none";
@@ -163,6 +165,7 @@ formBtn.addEventListener("click", () => {
             .fail((jqXHR, textStatus) => {
                 alert("AJAX request failed: " + textStatus);
                 loader.style.display = "none";
+                location.reload();
             });
     }
 });
