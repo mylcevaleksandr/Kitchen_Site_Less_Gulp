@@ -92,8 +92,9 @@ popupBtn.addEventListener("click", () => {
     } else {
         loader.style.display = "flex";
         const request = $.ajax({
-            url: "https://api.wheretheiss.at/v1/satellites",
-            method: "GET"
+            url: "https://testologia.ru/checkout",
+            method: "POST",
+            data: {name: popupName.value, phone: popupPhone.value},
         });
         request.done(function (msg) {
             if (msg.success === 1) {
@@ -142,9 +143,9 @@ formBtn.addEventListener("click", () => {
     } else {
         loader.style.display = "flex";
         $.ajax({
-            method: "GET",
-            url: "https://api.wheretheiss.at/v1/satellites/25544",
-            data: {name: formName.value}
+            method: "POST",
+            url: "https://testologia.ru/checkout",
+            data: {product: formDate.value, name: formName.value, phone: formPhone.value}
         })
             .done((msg) => {
                 if (msg.success === 1) {
