@@ -1,10 +1,8 @@
-// noinspection DuplicatedCode
 
 "use strict";
 new WOW({
     animateClass: "animate__animated"
 }).init();
-document.getElementsByTagName('video')[0].volume = 0.5;
 /* burger menu */
 const burger = document.getElementsByClassName("navigation__burger")[0];
 const menu = document.getElementsByClassName("navigation__list")[0];
@@ -96,7 +94,7 @@ popupBtn.addEventListener("click", () => {
         loader.style.display = "flex";
         $.ajax({
             method: "POST",
-            url: "https://testologia.site/checkout",
+            url: "http://testologia.site/checkout",
             data: {name: popupName.value}
         })
             .done(function (msg) {
@@ -112,6 +110,10 @@ popupBtn.addEventListener("click", () => {
                         location.reload();
                     }, 5000);
                 }
+            })
+            .fail((jqXHR, textStatus) => {
+                alert("AJAX request failed: " + textStatus);
+                loader.style.display = "none";
             });
     }
 });
@@ -140,7 +142,7 @@ formBtn.addEventListener("click", () => {
         loader.style.display = "flex";
         $.ajax({
             method: "POST",
-            url: "https://testologia.site/checkout",
+            url: "http://testologia.site/checkout",
             data: {name: formName.value}
         })
             .done((msg) => {
@@ -158,7 +160,7 @@ formBtn.addEventListener("click", () => {
                     }, 5000);
                 }
             })
-            .fail((jqXHR, textStatus, errorThrown) => {
+            .fail((jqXHR, textStatus) => {
                 alert("AJAX request failed: " + textStatus);
                 loader.style.display = "none";
             });
@@ -179,7 +181,7 @@ const getIndex = () => {
 const changeInfo = (index) => {
     infoSlides.forEach((el, i) => {
         el.classList.remove("active");
-        if (i == index) {
+        if (i === index) {
             el.classList.add("active");
         }
     });
@@ -188,7 +190,7 @@ const changeInfo = (index) => {
 /* создаем новый клон обзервера */
 const observer = new MutationObserver((mutationsList) => {
     for (const mutation of mutationsList) {
-        if (mutation.type == "attributes" && mutation.attributeName === "class") {
+        if (mutation.type === "attributes" && mutation.attributeName === "class") {
             changeInfo(getIndex());
         }
     }
