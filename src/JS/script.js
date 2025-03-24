@@ -94,7 +94,7 @@ popupBtn.addEventListener("click", () => {
         loader.style.display = "flex";
         $.ajax({
             method: "POST",
-            url: "http://testologia.site/checkout",
+            url: "https://testologia.site/checkout",
             data: {name: popupName.value}
         })
             .done(function (msg) {
@@ -142,7 +142,7 @@ formBtn.addEventListener("click", () => {
         loader.style.display = "flex";
         $.ajax({
             method: "POST",
-            url: "http://testologia.site/checkout",
+            url: "https://testologia.site/checkout",
             data: {name: formName.value}
         })
             .done((msg) => {
